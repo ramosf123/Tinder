@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cards View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="Tinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="tSs-nF-1vh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-MK-yPa">
+                                <rect key="frame" x="0.0" y="559" width="375" height="108"/>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rTn-W4-heV" userLabel="Card View">
+                                <rect key="frame" x="37" y="128" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="ijm-oG-xuh">
+                                        <rect key="frame" x="3" y="3" width="295" height="295"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PMG-yn-J8K" appends="YES" id="0kA-Wd-yH6"/>
+                                    <outletCollection property="gestureRecognizers" destination="6ww-hE-yt5" appends="YES" id="mQT-zi-XPV"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gdf-MK-yPa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3X9-Ie-Je5"/>
+                            <constraint firstItem="gdf-MK-yPa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9cc-Ak-SHY"/>
+                            <constraint firstItem="tSs-nF-1vh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Tnr-qi-gkO"/>
+                            <constraint firstAttribute="bottom" secondItem="gdf-MK-yPa" secondAttribute="bottom" id="b7z-ig-b32"/>
+                            <constraint firstItem="tSs-nF-1vh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nL0-IO-pir"/>
+                            <constraint firstItem="tSs-nF-1vh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vzn-yI-4Fr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardView" destination="rTn-W4-heV" id="G2I-pR-KPs"/>
+                        <outlet property="profileImg" destination="ijm-oG-xuh" id="KXp-eM-Pkp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="PMG-yn-J8K">
+                    <connections>
+                        <action selector="didPan:" destination="BYZ-38-t0r" id="3DN-F6-rog"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="6ww-hE-yt5">
+                    <connections>
+                        <action selector="didTap:" destination="BYZ-38-t0r" id="XrI-4S-vuA"/>
+                        <segue destination="8Gz-1a-3yw" kind="presentation" identifier="profileSegue" id="MxP-6Y-E6Q"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="19I-Mr-MUQ">
+            <objects>
+                <viewController id="8Gz-1a-3yw" customClass="profileViewController" customModule="Tinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bVs-so-mZv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="nav_bar2" translatesAutoresizingMaskIntoConstraints="NO" id="AdP-tf-o1m">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XvM-gN-cNi">
+                                <rect key="frame" x="40" y="96" width="295" height="295"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ed-YT-utb">
+                                <rect key="frame" x="25" y="24" width="67" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SVu-Mc-f4d" appends="YES" id="ISe-Ec-W5R"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AdP-tf-o1m" firstAttribute="trailing" secondItem="hgB-lA-T7A" secondAttribute="trailing" id="WVW-DC-ZYF"/>
+                            <constraint firstItem="AdP-tf-o1m" firstAttribute="top" secondItem="bVs-so-mZv" secondAttribute="top" id="mlh-s2-FYm"/>
+                            <constraint firstItem="AdP-tf-o1m" firstAttribute="leading" secondItem="hgB-lA-T7A" secondAttribute="leading" id="rQN-YD-kuI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hgB-lA-T7A"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileImg" destination="XvM-gN-cNi" id="maB-gS-1x8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPk-qu-dG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SVu-Mc-f4d">
+                    <connections>
+                        <action selector="dismissProfile:" destination="8Gz-1a-3yw" id="GNf-HU-aSd"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1032.8" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="action_buttons" width="320" height="108"/>
+        <image name="nav_bar" width="320" height="65"/>
+        <image name="nav_bar2" width="320" height="65"/>
+        <image name="ryan" width="449" height="514"/>
+    </resources>
+</document>
